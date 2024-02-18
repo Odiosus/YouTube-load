@@ -1,15 +1,18 @@
 # подключаем библиотеки
 from tkinter import *
+from tkinter import ttk
 import pytube
 from tkinter import messagebox
 
 # рисуем главное окно
 root = Tk()
 # размер и позиция окна
-root.geometry("500x350+400+200")
+root.geometry("500x250+400+200")
 root.resizable(False, False)
 # заголовок окна
 root.title("MY: YT-load")
+# прозрачность окна
+root.attributes("-alpha", 0.5)
 # цвет фона
 root.config(bg='#D3D3D3')
 
@@ -47,7 +50,7 @@ def Exit():
 
 
 # заголовок формы
-lb = Label(root, text="Загружу видео с YouTube ", font=('Arial,15,bold'), bg='#D3D3D3')
+lb = Label(root, text="Загружаю видео с YouTube ", font=('Arial,15,bold'), bg='#D3D3D3')
 lb.pack(pady=15)
 # пояснительный текст для поля с адресом
 lb1 = Label(root, text="Ссылка на видео :", font=('Arial,15,bold'), bg='#D3D3D3')
@@ -59,14 +62,16 @@ En1 = Entry(root, textvariable=link1, font=('Arial,15,bold'))
 En1.place(x=230, y=80)
 
 # кнопка скачивания
-btn1 = Button(root, text="Скачать", font=('Arial,10,bold'), bd=4, command=download)
-btn1.place(x=330, y=130)
+btn_download = ttk.Button(root, text="Скачать", command=download)
+# расположение кнопки
+btn_download.pack(anchor="n", pady=70)
+
 
 # кнопки очистки и выхода
-btn2 = Button(root, text="Очистить", font=('Arial,10,bold'), bd=4, command=reset)
-btn2.place(x=160, y=190)
-btn3 = Button(root, text=" Выход ", font=('Arial,10,bold'), bd=4, command=Exit)
-btn3.place(x=250, y=190)
+btn_reset = ttk.Button(root, text="Очистить", command=reset)
+btn_reset.place(x=160, y=190)
+btn_exit = Button(root, text=" Выход ", command=Exit)
+btn_exit.place(x=250, y=190)
 
 # запускаем окно
 root.mainloop()
