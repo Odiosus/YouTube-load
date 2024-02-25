@@ -38,13 +38,13 @@ def download():
         # скачиваем видео
         video.download()
         # выводим результат
-        Result = "Загрузка завершена"
-        messagebox.showinfo("Готово", Result)
+        result = "Загрузка завершена"
+        messagebox.showinfo("Готово", result)
     # если скачать не получилось
     except:
         # выводим сообщение об ошибке
-        Result = "Ссылка не работает"
-        messagebox.showerror("Ошибка", Result)
+        result = "Ссылка не работает"
+        messagebox.showerror("Ошибка", result)
 
 
 # при нажатии на кнопку очистки очищаем строку с адресом видео
@@ -53,7 +53,7 @@ def reset():
 
 
 # при нажатии на кнопку выхода — закрываем окно с интерфейсом
-def Exit():
+def exit():
     root.destroy()
 
 
@@ -78,7 +78,7 @@ btn_download.pack(anchor="n", pady=70)
 # кнопки очистки и выхода
 btn_reset = ttk.Button(root, text="Очистить", command=reset, style="My.TLabel")
 btn_reset.place(x=160, y=190)
-btn_exit = ttk.Button(root, text=" Выход ", command=Exit, style="My.TLabel")
+btn_exit = ttk.Button(root, text=" Выход ", command=exit, style="My.TLabel")
 btn_exit.place(x=250, y=190)
 
 # запускаем окно
