@@ -1,4 +1,3 @@
-# подключаем библиотеки
 from tkinter import *
 from tkinter import ttk
 import pytube
@@ -16,8 +15,9 @@ root.title("MY: YT-load")
 root.attributes("-alpha", 0.5)
 # цвет фона
 root.config(bg='#1f1f21')
+# создаем шрифт по умолчанию
 font_all = font.Font(family="Arial", size=15, weight="normal", slant="roman")
-
+# создаем стиль
 label_style = ttk.Style()
 label_style.configure("My.TLabel",  # имя стиля
                       font="Arial 13",  # шрифт
